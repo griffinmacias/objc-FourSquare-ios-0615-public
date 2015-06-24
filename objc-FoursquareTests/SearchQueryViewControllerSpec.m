@@ -6,7 +6,7 @@
 //  Copyright 2014 Flatiron School. All rights reserved.
 //
 
-#ifdef ADVANCED
+//#ifdef ADVANCED
 #import "Specta.h"
 #define EXP_SHORTHAND
 #import "Expecta.h"
@@ -40,15 +40,15 @@ describe(@"SearchQueryViewController", ^{
     });
     
     describe(@"searchButton", ^{
-//        it(@"should segue to the results view controller", ^{
-//            [tester tapViewWithAccessibilityLabel:@"SearchButton"];
-//            [tester waitForViewWithAccessibilityLabel:@"VenuesTableView"];
-//        });
-//        
+        it(@"should segue to the results view controller", ^{
+            [tester tapViewWithAccessibilityLabel:@"SearchButton"];
+            [tester waitForViewWithAccessibilityLabel:@"VenuesTableView"];
+        });
+        
         
     });
     
 });
 
 SpecEnd
-#endif
+//#endif

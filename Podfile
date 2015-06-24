@@ -12,8 +12,8 @@ end
 
 target "objc-FoursquareTests" do
   pod 'Specta', :git=> "git@github.com:specta/specta.git"
-  pod 'Expecta',     '~> 0.2.4'                                                 
-  pod 'KIF', '~> 3.0'                                                           
+  pod 'Expecta',     '~> 0.2.4'                                                                                 
   pod 'Swizzlean', '~> 0.1.1' 
+  pod 'KIF'                
 end
 

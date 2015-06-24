@@ -8,11 +8,14 @@
 
 #import "AppDelegate.h"
 #import <OHHTTPStubs/OHHTTPStubs.h>
+#import <Foursquare-API-v2/Foursquare2.h>
 
 @implementation AppDelegate
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     if (isRunningTests()) {
         
         [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
@@ -30,9 +33,20 @@
         
     }
     // Override point for customization after application launch.
+   
+    [Foursquare2 setupFoursquareWithClientId:@"4CYIWCSVTU40F1RGDRXIYS1ATQ4TQ2GGXWTRMNW5M3VYPCDW"
+                                      secret:@"ZYS0F3CJEFAQVXUWOYW5Y4VZYAT3IR0XLM5QZSW4NRZKVRQ4"
+                                 callbackURL:@"com.flatironschool"];
+    
+
     return YES;
+    
 }
-							
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [Foursquare2 handleURL:url];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
